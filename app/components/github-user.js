@@ -2,10 +2,6 @@
 
 class GithubUser extends HTMLElement {
 
-  get name() {
-    return this.getAttribute('name');
-  }
-
   set name(input) {
     this.setAttribute('name', input);
     this.searchUser(input);
@@ -15,7 +11,7 @@ class GithubUser extends HTMLElement {
     super();
     this.SD = this.attachShadow({mode: 'open'});
 
-    console.log('<github-user> added to dom');
+    console.log('<github-user> created');
   }
 
   searchUser(name){
@@ -25,7 +21,6 @@ class GithubUser extends HTMLElement {
         console.log(data);
         const str = JSON.stringify(data,null,2);
 
-        // Credo uno shadow DOM con contenuto e scoped styles
         this.SD.innerHTML = `
           <style>
             pre{ padding: 20px; border: 1px dashed gray }

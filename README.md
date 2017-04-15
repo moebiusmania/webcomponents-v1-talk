@@ -15,9 +15,41 @@
 
 ### Sintassi base
 
+```javascript
+// mycomponent.js
+class MyComponent extends HTMLElement {
+
+  constructor(){
+    super();
+    console.log('<my-componennt> created');
+  }
+
+  connectedCallback(){
+    console.log('<my-componennt> added to DOM');
+  }
+
+}
+
+customElements.define('my-component', MyComponent);
+```
+
+```html
+<!-- index.html -->
+<head>
+  <script src="mycomponent.js"></script>
+</head>
+<body>
+  <my-component></my-component>
+</body>
+```
+
 ### Polyfill
 
 ### Librerie
+* Polymer (Google)
+* SkateJS
+* X-Tag (Mozilla)
+* Slim.js
 
 ---
 
