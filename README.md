@@ -10,8 +10,15 @@
 ---
 
 ### Specifica Web Components v1
+* Custom elements
+* Shadow DOM
+* Templates
+* HTML imports
 
 ### Supporto dei browser (aprile 2017)
+
+### Polyfill
+Per i browser che non supportano la specifica è possibile utilizzare la [suite di polyfills "ufficiale"](https://github.com/webcomponents) che può essere caricata per intero o a singoli moduli. E' presente anche una versione che carica le polyfill in lazy-loading.
 
 ### Sintassi base
 
@@ -43,13 +50,14 @@ customElements.define('my-component', MyComponent);
 </body>
 ```
 
-### Polyfill
-
 ### Librerie
 * Polymer (Google)
 * SkateJS
 * X-Tag (Mozilla)
 * Slim.js
+
+### webcomponents.org
+Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.
 
 ---
 
