@@ -10,8 +10,11 @@ class GithubUser extends HTMLElement {
   constructor(){
     super();
     this.SD = this.attachShadow({mode: 'open'});
+  }
 
-    console.log('<github-user> created');
+  connectedCallback(){
+    super();
+    console.log('<github-user> added to the DOM');
   }
 
   searchUser(name){
