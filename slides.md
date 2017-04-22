@@ -4,6 +4,11 @@
 ### Mantra
 NON STIAMO PARLANDO DI UN FRAMEWORK
 
+### What about v0?
+La primissima iterazione della specifica Web Components viene ora referenziata come "v0", in quanto non ha ottenuto l'adozione cross browser (*è supportata solo su Chrome*) ma è servita come dimostrazione delle loro potenzialità e ha permesso ai vari produttori di browser di definire la nuova specifica che stanno attualmente implementando.
+
+**Nota:** è la versione della specifica su cui si basa Polymer 1.x .
+
 ### Specifica Web Components v1
 * **Custom elements**
   * Permette di definire un nuovo tag personalizzato
@@ -56,10 +61,10 @@ customElements.define('my-component', MyComponent);
 ```
 
 ### Librerie
-* Polymer (Google)
-* SkateJS
-* X-Tag (Mozilla)
-* Slim.js
+* [Polymer (Google)](https://www.polymer-project.org/)
+* [SkateJS](http://skatejs.github.io/)
+* [X-Tag (Mozilla)](http://x-tag.github.io/)
+* [Slim.js](http://slimjs.com/)
 
 ### webcomponents.org
 Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.
