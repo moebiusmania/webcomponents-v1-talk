@@ -30,9 +30,11 @@ La primissima iterazione della specifica Web Components viene ora referenziata c
   * Posso importare blocchi di HTML senza bisogno di Javascript
   * Non è come un ```<iframe>``` che richiede l'intera struttura di una pagina e crea un suo contesto.
 
+
 ---
 
 ### Supporto dei browser (aprile 2017)
+![http://placehold.it/350x350](http://placehold.it/350x450)
 
 ---
 

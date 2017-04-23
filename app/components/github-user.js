@@ -13,7 +13,6 @@ class GithubUser extends HTMLElement {
   }
 
   connectedCallback(){
-    super();
     console.log('<github-user> added to the DOM');
   }
 
