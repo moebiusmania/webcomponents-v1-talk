@@ -1,13 +1,18 @@
 # Web Components v1: cosa c'è da sapere
 
+---
 
 ### Mantra
 NON STIAMO PARLANDO DI UN FRAMEWORK
+
+---
 
 ### What about v0?
 La primissima iterazione della specifica Web Components viene ora referenziata come "v0", in quanto non ha ottenuto l'adozione cross browser (*è supportata solo su Chrome*) ma è servita come dimostrazione delle loro potenzialità e ha permesso ai vari produttori di browser di definire la nuova specifica che stanno attualmente implementando.
 
 **Nota:** è la versione della specifica su cui si basa Polymer 1.x .
+
+---
 
 ### Specifica Web Components v1
 * **Custom elements**
@@ -25,10 +30,16 @@ La primissima iterazione della specifica Web Components viene ora referenziata c
   * Posso importare blocchi di HTML senza bisogno di Javascript
   * Non è come un ```<iframe>``` che richiede l'intera struttura di una pagina e crea un suo contesto.
 
+---
+
 ### Supporto dei browser (aprile 2017)
+
+---
 
 ### Polyfill
 Per i browser che non supportano la specifica è possibile utilizzare la [suite di polyfills "ufficiale"](https://github.com/webcomponents) che può essere caricata per intero o a singoli moduli. E' presente anche una versione che carica le polyfill in lazy-loading.
+
+---
 
 ### Sintassi base
 
@@ -60,11 +71,15 @@ customElements.define('my-component', MyComponent);
 </body>
 ```
 
+---
+
 ### Librerie
 * [Polymer (Google)](https://www.polymer-project.org/)
 * [SkateJS](http://skatejs.github.io/)
 * [X-Tag (Mozilla)](http://x-tag.github.io/)
 * [Slim.js](http://slimjs.com/)
+
+---
 
 ### webcomponents.org
 Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.

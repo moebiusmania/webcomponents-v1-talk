@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "http-server ./app -p 8081 -s",
-    "deploy": "gh-pages -d app"
+    "deploy": "gh-pages -d app",
+    "slides": "markdown-to-slides ./slides.md -o ./app/slides/index.html"
   },
   "repository": {
     "type": "git",
