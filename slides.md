@@ -7,7 +7,7 @@ lightning talk di [Salvatore Laisa](http://www.salvatorelaisa.me/) per [MilanoJS
 ---
 
 ### Mantra
-**NON STIAMO PARLANDO DI UN FRAMEWORK**
+![]()
 
 ---
 
@@ -88,3 +88,11 @@ customElements.define('my-component', MyComponent);
 
 ### webcomponents.org
 Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.
+
+---
+
+# GRAZIE
+
+-
+
+slides built with [Remark](https://remarkjs.com)
