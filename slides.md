@@ -1,9 +1,13 @@
 # Web Components v1: cosa c'è da sapere
 
+-
+
+lightning talk di [Salvatore Laisa](http://www.salvatorelaisa.me/) per [MilanoJS](https://milanojs.com/)
+
 ---
 
 ### Mantra
-NON STIAMO PARLANDO DI UN FRAMEWORK
+**NON STIAMO PARLANDO DI UN FRAMEWORK**
 
 ---
 
@@ -29,7 +33,6 @@ La primissima iterazione della specifica Web Components viene ora referenziata c
 * **HTML imports**
   * Posso importare blocchi di HTML senza bisogno di Javascript
   * Non è come un ```<iframe>``` che richiede l'intera struttura di una pagina e crea un suo contesto.
-
 
 ---
 
