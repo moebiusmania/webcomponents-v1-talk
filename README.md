@@ -12,6 +12,21 @@
 
 [https://moebiusmania.github.io/webcomponents-v1-talk/slides](https://moebiusmania.github.io/webcomponents-v1-talk/slides/)
 
+### Comandi disponibili
+```
+yarn start
+```
+Avvia un webserver alla porta ```8081``` per visualizzare localmente il progetto.
+
+```
+yarn slides
+```
+Lancia una build delle slides, usando ```slides.md``` come punto di partenza e ```./app/slides/index.html``` come destinazione.
+
+```
+yarn deploy
+```
+Committa il contenuto di ```./app/``` nella branch ```gh-pages``` del repository e fa una push sul remote per generare la GitHub Page.
 
 ### Licenza
 Tutto il materiale è rilasciato sotto la [licenza MIT](LICENSE).
