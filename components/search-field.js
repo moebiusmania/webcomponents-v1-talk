@@ -4,6 +4,7 @@ class SearchField extends HTMLElement {
 
   constructor(){
     super();
+    this.data = null;
     this.SD = this.attachShadow({mode: 'open'});
     this.SD.innerHTML = `
       <style>
@@ -25,6 +26,19 @@ class SearchField extends HTMLElement {
     `;
 
     console.log('<search-field> added to the DOM');
+
+    this.SD.querySelector('input').addEventListener('keyup', this._sendData);
+  }
+
+  _sendData(evt){
+    if(evt.keyCode === 13){
+      this.data = evt.currentTarget.value;
+      this.dispatchEvent(new CustomEvent('search', {
+        bubbles: true,
+        composed: true,
+        detail: {data: this.data}
+      }));
+    }
   }
 
 }
