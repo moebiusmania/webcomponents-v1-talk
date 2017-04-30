@@ -31,8 +31,14 @@ class SearchField extends HTMLElement {
   }
 
   _sendData(evt){
-    evt.keyCode === 13 ? this.data = evt.currentTarget.value : null;
-    console.log(this.data);
+    if(evt.keyCode === 13){
+      this.data = evt.currentTarget.value;
+      this.dispatchEvent(new CustomEvent('search', {
+        bubbles: true,
+        composed: true,
+        detail: {data: this.data}
+      }));
+    }
   }
 
 }
