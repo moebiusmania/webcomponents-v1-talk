@@ -10,6 +10,7 @@
 h1, h2, h3 {
 	font-weight: 400;
 	margin-bottom: 0;
+	
 }
 .remark-slide-content h1 { font-size: 3em; }
 .remark-slide-content h2 { font-size: 2em; }
@@ -45,7 +46,7 @@ code {
 	clear: both;
 }
 .remark-slide-content h3 {
-    font-size: 1.8em;
+    font-size: 1.9em;
 }
 .remark-slide-content p {
     font-weight: 300;
@@ -73,6 +74,9 @@ code {
 	color: #f3f3f3;
 	line-height: 0.8em;
 }
+.main-title h1{
+	line-height: 1.2em;
+}
 /* Custom */
 .remark-code {
 	display: block;
@@ -92,7 +96,9 @@ lightning talk di [Salvatore Laisa](http://www.salvatorelaisa.me/) per [MilanoJS
 
 ---
 ### Mantra
-![]()
+![1o8pyv.jpg](1o8pyv.jpg)
+
+Non fatevi schiaffeggiare da Batman...
 
 
 ---
@@ -105,25 +111,17 @@ La primissima iterazione della specifica Web Components viene ora referenziata c
 ---
 ### Specifica Web Components v1
 
-- **Custom elements**
+- **[Custom elements](https://caniuse.com/#feat=custom-elementsv1)**
  - Permette di definire un nuovo tag personalizzato
  - **DEVE** aver un dash nel nome (*es: my-element*)
-- **Shadow DOM**
+- **[Shadow DOM](https://caniuse.com/#feat=shadowdomv1)**
  - Crea un nodo del DOM &quot;nascosto&quot; da quello principale
  - I selettori CSS non sono in grado di raggiungerlo
  - Il CSS definito al suo intero... rimane al suo interno!
  - Può essere modificato da codice JS globale solo in maniera esplicita
-- **Templates**
- - Blocco di HTML che non viene renderizzato dal browser
- - Viene clonato e istanziato via Javascript
-- **HTML imports**
+- **[HTML imports](https://caniuse.com/#feat=imports)**
  - Posso importare blocchi di HTML senza bisogno di Javascript
  - Non è come un `&lt;iframe&gt;` che richiede l&#39;intera struttura di una pagina e crea un suo contesto.
-
-
----
-### Supporto dei browser (aprile 2017)
-![http://placehold.it/350x350](http://placehold.it/350x450)
 
 
 ---
@@ -170,9 +168,14 @@ customElements.define('my-component', MyComponent);
 
 
 ---
-### webcomponents.org
-Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.
+class: center, middle, main-title
 
+# [Live example!](https://moebiusmania.github.io/webcomponents-v1-talk/)
+
+---
+class: center, middle, main-title
+
+# nessun traspilatore o compilatore è stato utilizzato per la demo.
 
 ---
 class: center, middle, main-title
