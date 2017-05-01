@@ -7,7 +7,10 @@ lightning talk di [Salvatore Laisa](http://www.salvatorelaisa.me/) per [MilanoJS
 ---
 
 ### Mantra
-![]()
+
+![1o8pyv.jpg](1o8pyv.jpg)
+
+Non fatevi schiaffeggiare da Batman...
 
 ---
 
@@ -19,25 +22,17 @@ La primissima iterazione della specifica Web Components viene ora referenziata c
 ---
 
 ### Specifica Web Components v1
-* **Custom elements**
+* **[Custom elements](https://caniuse.com/#feat=custom-elementsv1)**
   * Permette di definire un nuovo tag personalizzato
   * **DEVE** aver un dash nel nome (*es: my-element*)
-* **Shadow DOM**
+* **[Shadow DOM](https://caniuse.com/#feat=shadowdomv1)**
   * Crea un nodo del DOM "nascosto" da quello principale
   * I selettori CSS non sono in grado di raggiungerlo
   * Il CSS definito al suo intero... rimane al suo interno!
   * Può essere modificato da codice JS globale solo in maniera esplicita
-* **Templates**
-  * Blocco di HTML che non viene renderizzato dal browser
-  * Viene clonato e istanziato via Javascript
-* **HTML imports**
+* **[HTML imports](https://caniuse.com/#feat=imports)**
   * Posso importare blocchi di HTML senza bisogno di Javascript
   * Non è come un ```<iframe>``` che richiede l'intera struttura di una pagina e crea un suo contesto.
-
----
-
-### Supporto dei browser (aprile 2017)
-![http://placehold.it/350x350](http://placehold.it/350x450)
 
 ---
 
@@ -86,8 +81,11 @@ customElements.define('my-component', MyComponent);
 
 ---
 
-### webcomponents.org
-Da fine del 2016 il sito [webcomponents.org](https://www.webcomponents.org/) è stato ripensato come catalogo/store per custom elements. Sono presenti componenti realizzati da Google, IBM, Vaadin e vari aziende e sviluppatori indipendenti.
+# [Live example!](https://moebiusmania.github.io/webcomponents-v1-talk/)
+
+---
+
+# nessun traspilatore o compilatore è stato utilizzato per la demo.
 
 ---
 
