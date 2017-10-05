@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/moebiusmania/webcomponents-v1-talk#readme",
   "devDependencies": {
-    "gh-pages": "^0.12.0",
-    "http-server": "^0.9.0",
+    "gh-pages": "^1.0.0",
+    "http-server": "^0.10.0",
     "markdown-to-slides": "^1.0.5"
   },
   "dependencies": {}
