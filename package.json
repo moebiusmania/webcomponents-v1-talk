@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/moebiusmania/webcomponents-v1-talk#readme",
   "devDependencies": {
+    "concurrently": "^3.5.0",
     "gh-pages": "^1.0.0",
-    "http-server": "^0.10.0",
-    "markdown-to-slides": "^1.0.5"
+    "http-server": "^0.10.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reveal.js": "^3.5.0"
+  }
 }
