@@ -1,0 +1,12 @@
+.first > h2 > small{
+  opacity: 0.7
+}
+.first > hr {
+  width: 70%;
+  opacity: 0.4;
+  margin-bottom: 30px;
+}
+
+.last ul > li{
+  list-style: circle;
+}
