@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/master/css/reveal.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/master/css/theme/moon.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.rawgit.com/hakimel/reveal.js/master/js/reveal.js"></script>
   <title>Web Components | Not the same talk about it</title>
@@ -27,6 +28,9 @@
       </section>
       <section>
         <h2>The good party (2017)</h2>
+        <p class="fragment">a quick (lightning) talk</p>
+        <p class="fragment">a 10 minutes talk</p>
+        <p class="fragment">a 7 minutes talk</p>
       </section>
       <section>
         <h2>Agenda:</h2>
@@ -43,8 +47,59 @@
         <h2><small>--- basic concepts ---</small></h2>
       </section>
       <section>
+        <h2>Definition</h2>
+        <blockquote>"You can think of Web Components as reusable user interface widgets that are created 
+          using open Web technology. They are part of the browser, and so they do not need external libraries 
+          like jQuery or Dojo."</blockquote>
+        <p>from <b>Mozilla MDN</b></p>
+      </section>
+      <section>
+        <h2>Make your own</h2>
+        <ul>
+          <li class="fragment">Custom Elements API</li>
+          <li class="fragment">Shadow DOM API</li>
+          <li class="fragment"><i>(optional)</i> polyfills</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Browser support</h2>
+      </section>
+      <section>
+        <h2>Syntax</h2>
+        <pre><code data-trim>
+  class MyComponent extends HTMLElement {
+    constructor(){
+      super();
+      console.log('<my-componennt> created');
+    }
+    connectedCallback(){
+      console.log('<my-componennt> added to DOM');
+    }
+  }
+
+  customElements.define('my-component', MyComponent);
+        </code></pre>
+      </section>
+      <section>
+        <pre><code data-trim>
+          <my-element></my-element>
+        </code></pre>
+      </section>
+      <section>
         <h1>Libraries</h1>
         <h2><small>--- with a little help from my friends ---</small></h2>
+      </section>
+      <section>
+        <h1>Interoperability</h1>
+        <h2><small>--- aka: reversing the polarity of the neutron flow ---</small></h2>
+      </section>
+      <section>
+        <h1>Mythbusting</h1>
+        <h2><small>--- who you gonna call? ---</small></h2>
+      </section>
+      <section>
+        <h1>Really nice use case</h1>
+        <h2><small>--- not average, not overwhelming... but nice! ---</small></h2>
       </section>
       <section class="last">
         <h1>Thanks to:</h1>
@@ -58,8 +113,10 @@
     </div>
   </div>
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>
     Reveal.initialize();
+    hljs.initHighlightingOnLoad();
   </script>
 
 </body>

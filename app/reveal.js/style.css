@@ -7,6 +7,6 @@
   margin-bottom: 30px;
 }
 
-.last ul > li{
+ul > li{
   list-style: circle;
 }
