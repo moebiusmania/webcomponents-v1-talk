@@ -10,3 +10,7 @@
 ul > li{
   list-style: circle;
 }
+
+.before{
+  opacity: 0.6;
+}

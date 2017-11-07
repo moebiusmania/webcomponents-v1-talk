@@ -4,7 +4,7 @@
   "description": "Materiale per il lightning talk @ MilanoJS - The good party 02/05/2017",
   "main": "index.html",
   "scripts": {
-    "start": "http-server ./app -p 8081 -s",
+    "start": "http-server ./slides -p 8085 -s",
     "deploy": "gh-pages -d app",
     "slides": "markdown-to-slides -d ./slides.md -o ./app/slides/index.html -s ./app/slides/slides.css"
   },
