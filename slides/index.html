@@ -12,6 +12,8 @@
   <script src="https://cdn.rawgit.com/hakimel/reveal.js/master/js/reveal.js"></script>
   <title>Web Components | Not the same talk about it</title>
 
+  
+  <script src="./components/gamepad.js"></script>
 </head>
 <body>
   
@@ -31,7 +33,7 @@
         <table>
           <thead>
             <tr>
-              <th>before 11/2017</th>
+              <th class="before">before 11/2017</th>
               <th>after 11/2017</th>
             </tr>
           </thead>
@@ -97,7 +99,11 @@
         <h2>Make your own</h2>
         <ul>
           <li class="fragment">Custom Elements API <small>(living standard)</small></li>
-          <li class="fragment">Shadow DOM API <small>(living standard, editor's draft)</small></li>
+          <li class="fragment">Shadow DOM API <small>(living standard, editor's draft)</small>
+            <ul>
+              <li>&ltslot&gt element</li>
+            </ul>
+          </li>
           <li class="fragment"><i>(optional)</i> polyfills</li>
         </ul>
       </section>
@@ -121,7 +127,16 @@
         </code></pre>
       </section>
       <section>
-        <h2>Browser support</h2>
+        <h2>Browser support - Custom Elements</h2>
+        <p class="ciu_embed" data-feature="custom-elementsv1" data-periods="future_1,current,past_1">
+          <a href="http://caniuse.com/#feat=custom-elementsv1">Can I Use custom-elementsv1?</a> Data on support for the custom-elementsv1 feature across the major browsers from caniuse.com.
+        </p>
+      </section>
+      <section>
+        <h2>Browser support - Shadow DOM</h2>
+        <p class="ciu_embed" data-feature="shadowdomv1" data-periods="future_1,current,past_1">
+          <a href="http://caniuse.com/#feat=shadowdomv1">Can I Use shadowdomv1?</a> Data on support for the shadowdomv1 feature across the major browsers from caniuse.com.
+        </p>
       </section>
       <section>
         <h2>Syntax (definition)</h2>
@@ -171,8 +186,124 @@
         <h2><small>--- with a little help from my friends ---</small></h2>
       </section>
       <section>
+        <h2>Polymer</h2>
+        <p>The great (Google) herald of Web Components</p>
+        <ul>
+          <li class="fragment">syntactic sugar, data biding, template utils...</li>
+          <li class="fragment">extends native syntax</li>
+          <li class="fragment">just moved from Bower to Yarn (v3)</li>
+          <li class="fragment">from v3 the templating in "pluggable"</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Polymer (v3)</h2>
+        <pre><code data-trim>
+  import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
+
+  class MyElement extends PolymerElement{
+    static get properties() { return {
+      name: {
+        type: String,
+        value: 'Goldrake'
+      }
+    } }
+
+    static get template() {
+      return `&ltp&gt[[name]] is coming!&lt/p&gt` 
+    }
+  }
+        
+        </code></pre>
+      </section>
+      <section>
+        <h2>HyperHTML</h2>
+        <p>Not strictly related to Web Components... 
+          but what about having pure Javascript competing with Virtual DOM?</p>
+        <ul>
+          <li class="fragment">really lighweight</li>
+          <li class="fragment">active development</li>
+          <li class="fragment">with a Custom Element companion</li>
+          <li class="fragment">"isomorphic" and NativeScript (experimental) implementations</li>
+        </ul>
+      </section>
+      <section>
+        <h2>HyperHTML</h2>
+        <pre><code data-trim>
+      	
+  function tick(render) {
+    render`
+      &ltdiv&gt
+        &lth2&gtIt is ${new Date().toLocaleTimeString()}.&lt/h2&gt
+      &lt/div&gt
+    `;
+  }
+
+  setInterval(tick, 1000,
+    hyperHTML.bind(document.body)
+  );
+
+        </code></pre>
+        <p>... and <a href="https://viperhtml.js.org/hyperhtml/examples/" 
+          target="_blank">many examples and comparisons</a> out there!</p>
+      </section>
+      <section>
+        <h1>hyperHTML <span class="vs">vs</span> litHTML</h1>
+        <p>In a quite funny twist Google developed a similar library a few
+          months ago...
+        </p>
+      </section>
+      <section>
+        <h2>SkateJS</h2>
+        <p>Started as a React inspired library but based on Web Components..</p>
+        <ul>
+          <li class="fragment">easier for React folks?</li>
+          <li class="fragment">trying a functional approach</li>
+          <li class="fragment">renderer for various libraries</li>
+        </ul>
+      </section>
+      <section>
+        <h2>SkateJS</h2>
+        <pre><code data-trim>
+  import { withComponent } from 'skatejs';
+  
+  const Component = withComponent();
+  
+  class GreetingComponent extends Component {
+    rendererCallback (renderRoot, renderCallback) {
+      renderRoot.innerHtml = '';
+      renderRoot.appendChild(renderCallback());
+    }
+    renderCallback () {
+        let el = document.createElement('span');
+        el.innerHTML = 'Hello, &ltslot&gt&lt/slot&gt!';
+        return el;
+    }
+  });
+  
+  customElements.define('x-hello', GreetingComponent);
+        </code></pre>
+      </section>
+      <section>
         <h1>Interoperability</h1>
         <h2><small>--- aka: reversing the polarity of the neutron flow ---</small></h2>
+      </section>
+      <section>
+        <h3>Can I use Web Components in [name a library]?</h3>
+        <h1 class="fragment">yes</h1>
+        <small class="fragment">(most of the times)</small>
+      </section>
+      <section>
+        <h2>How can I do that?</h2>
+        <p>basically just import che component in your page and add it in your
+          application template</p>
+        <p class="fragment">but not always it's so easy 😡</p>
+        <p class="fragment">Luckily there is...</p>
+      </section>
+      <section>
+        <h2>Custom Elements Everywhere</h2>
+        <a href="https://custom-elements-everywhere.com/" target="_blank">
+          <img src="./assets/cee.png" alt="" class="img">
+        </a>
       </section>
       <section>
         <h1>Mythbusting</h1>
@@ -210,24 +341,71 @@
         <h1>Really nice use case</h1>
         <h2><small>--- not average, not overwhelming... but nice! ---</small></h2>
       </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <p>AKA: did you noticed my gamepad remote?</p>
+      </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <pre><code data-trim>
+
+  Reveal.initialize();
+  
+  // Listening to custom events from gamepad-api element
+  const gamepad = document.querySelector('gamepad-api');
+
+  gamepad.addEventListener('button', evt => {
+    evt.detail.button === 'prev' ? 
+      Reveal.prev() : Reveal.next();
+  });
+
+        </code></pre>
+      </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <p>keep on playin!</p>
+        <ul>
+          <li class="fragment">
+            <a href="https://github.com/PolymerElements/platinum-bluetooth" target="_blank">
+              platinum-bluetooth</a>: guess what?</li>
+          <li class="fragment">
+            <a href="https://aframe.io/docs/0.7.0/introduction/">
+              A-frame</a>: WebVR elements by Mozilla
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Design systems/Pattern libraries</h2>
+        <p>Keep consistency across frameworks</p>
+        <ul>
+          <li>
+            <a href="https://www.webcomponents.org/collection/PolymerElements/paper-elements" target="_blank">
+              Google's Material design elements  
+            </a>
+          </li>
+          <li>
+            <a href="https://vaadin.com/elements" target="_blank">
+              Vaadin's UI elements
+            </a>
+          </li>
+        </ul>
+      </section>
       <section class="last">
         <h1>Thanks to:</h1>
         <ul>
           <li>you</li>
           <li>MilanoJS</li>
           <li>new neighbours for wi-fi</li>
-          <li></li>
         </ul>
       </section>
     </div>
   </div>
 
-  <script src="./components/gamepad.js"></script>
+  <gamepad-api></gamepad-api>
+
+  <script src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    Reveal.initialize();
-    hljs.initHighlightingOnLoad();
-  </script>
+  <script src="./slides.js"></script>
 
 </body>
 </html>
