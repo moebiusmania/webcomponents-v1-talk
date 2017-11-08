@@ -1,0 +1,27 @@
+.first > h2 > small{
+  opacity: 0.7
+}
+
+.first > hr {
+  width: 70%;
+  opacity: 0.4;
+  margin-bottom: 30px;
+}
+
+ul > li{
+  list-style: circle;
+}
+
+.before{
+  opacity: 0.6;
+}
+
+.reveal section img.img{
+  border: 0;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+.reveal span.vs{
+  opacity: 0.5;
+  color: gold;
+}

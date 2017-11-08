@@ -1,32 +1,411 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
-    <meta name="theme-color" content="#1e2327">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/master/css/reveal.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/master/css/theme/moon.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.rawgit.com/hakimel/reveal.js/master/js/reveal.js"></script>
+  <title>Web Components | Not the same talk about it</title>
 
-    <title>Web Components v1 | Cosa c'è da sapere</title>
-    
-    <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-lite.js"></script>
-    <script src="./components/github-user.js"></script>
-    <script src="./components/search-field.js"></script>
+  
+  <script src="./components/gamepad.js"></script>
 </head>
 <body>
-
-    <section class="container">
-        <h1>Web Components v1 | Cosa c'è da sapere</h1>
-        <h3><small>un talk di <a 
-            href="http://www.salvatorelaisa.me/" 
-            target="_blank">Salvatore Laisa</a> per MilanoJS</small></h3>
+  
+  <div class="reveal">
+    <div class="slides">
+      <section class="first">
+        <h1>Web Components</h1>
+        <h2><small>Not the same talk about it</small></h2>
         <hr>
-        <search-field></search-field>
-        <github-user></github-user>
-    </section>
-    
-    <script src="app.js"></script>
+        <p><small>by Salvatore Laisa @ MilanoJS - 07/11/2017</small></p>
+      </section>
+      <section>
+        <h1>About YOU</h1>
+      </section>
+      <section>
+        <h2>About me</h2>
+        <table>
+          <thead>
+            <tr>
+              <th class="before">before 11/2017</th>
+              <th>after 11/2017</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">(Lead) Frontend Developer</td>
+            </tr>
+            <tr>
+              <td class="before">@ Contactlab</td>
+              <td>@ Radicalbit</td>
+            </tr>
+            <tr>
+              <td colspan="2">Kung fu & Tai Chi practitioner</td>
+            </tr>
+            <tr>
+              <td class="before">Fat cat owner</td>
+              <td>🙁</td>
+            </tr>
+            <tr>
+              <td class="before">outside Milan</td>
+              <td>Milan</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>The good party (2017)</h2>
+        <p class="fragment">a quick (lightning) talk</p>
+        <p class="fragment">a 10 minutes talk</p>
+        <p class="fragment">a 7 minutes talk</p>
+      </section>
+      <section>
+        <h2>Mantra</h2>
+        <img src="./assets/batman.jpg" alt="">
+      </section>
+      <section>
+        <h2>Agenda:</h2>
+        <ol>
+          <li>Web Components 101</li>
+          <li>Libraries</li>
+          <li>Interoperability</li>
+          <li>Mythbusting</li>
+          <li>Really nice use case</li>
+        </ol>
+      </section>
+      <section>
+        <h1>Web Components 101</h1>
+        <h2><small>--- basic concepts ---</small></h2>
+      </section>
+      <section>
+        <h2>Definition</h2>
+        <blockquote>"You can think of Web Components as reusable user interface widgets that are created 
+          using open Web technology. They are part of the browser, and so they do not need external libraries 
+          like jQuery or Dojo."</blockquote>
+        <p>from <b>Mozilla MDN</b></p>
+      </section>
+      <section>
+        <h2>Current specification</h2>
+        <p>After a Chrome-only implementation, referred as "v0", browser vendor worked together for a 
+          common specification now called "Web Components v1".</p>
+      </section>
+      <section>
+        <h2>Make your own</h2>
+        <ul>
+          <li class="fragment">Custom Elements API <small>(living standard)</small></li>
+          <li class="fragment">Shadow DOM API <small>(living standard, editor's draft)</small>
+            <ul>
+              <li>&ltslot&gt element</li>
+            </ul>
+          </li>
+          <li class="fragment"><i>(optional)</i> polyfills</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Shadow DOM and...</h2>
+        <h1 class="fragment">CSS-in-CSS</h1>
+      </section>
+      <section>
+        <h2>CSS-in-CSS (aka: CSS)</h2>
+        <pre><code data-trim>
+  this.shadow.innerHTML = `
+    &ltstyle&gt
+      section{
+        color: red;
+      }
+    &lt/style&gt
+    &ltsection&gt
+      My awesome scoped style!
+    &lt/section&gt
+   `
+        </code></pre>
+      </section>
+      <section>
+        <h2>Browser support - Custom Elements</h2>
+        <p class="ciu_embed" data-feature="custom-elementsv1" data-periods="future_1,current,past_1">
+          <a href="http://caniuse.com/#feat=custom-elementsv1">Can I Use custom-elementsv1?</a> Data on support for the custom-elementsv1 feature across the major browsers from caniuse.com.
+        </p>
+      </section>
+      <section>
+        <h2>Browser support - Shadow DOM</h2>
+        <p class="ciu_embed" data-feature="shadowdomv1" data-periods="future_1,current,past_1">
+          <a href="http://caniuse.com/#feat=shadowdomv1">Can I Use shadowdomv1?</a> Data on support for the shadowdomv1 feature across the major browsers from caniuse.com.
+        </p>
+      </section>
+      <section>
+        <h2>Syntax (definition)</h2>
+        <pre><code data-trim>
+  class MyComponent extends HTMLElement {
+    constructor(){
+      super();
+      console.log('&ltmy-componennt&gt created');
+    }
+
+    connectedCallback(){
+      console.log('&ltmy-componennt&gt added to DOM');
+    }
+  }
+
+  customElements.define('my-component', MyComponent);
+        </code></pre>
+      </section>
+      <section>
+        <h2>Syntax (usage)</h2>
+        <pre><code data-trim>
+          &ltmy-element&gt&lt/my-element&gt
+        </code></pre>
+        <p>it works as a regular HTML element.</p>
+      </section>
+      <section>
+        <h2>With some template & Shadow DOM</h2>
+        <pre><code data-trim>
+  class UsefulElement extends HTMLElement {
+    constructor(){
+      super();
+
+      this.shadow = this.attachShadow({mode: 'open'});
+      this.text = "I'm a super useful element!";
+    }
+
+    connectedCallback(){
+      this.shadow.innerHTML = `&ltp&gt${this.text}&lt/p&gt$`;
+    }
+  }
+
+  customElements.define('useful-element', UsefulElement);
+        </code></pre>
+      </section>
+      <section>
+        <h1>Libraries</h1>
+        <h2><small>--- with a little help from my friends ---</small></h2>
+      </section>
+      <section>
+        <h2>Polymer</h2>
+        <p>The great (Google) herald of Web Components</p>
+        <ul>
+          <li class="fragment">syntactic sugar, data biding, template utils...</li>
+          <li class="fragment">extends native syntax</li>
+          <li class="fragment">just moved from Bower to Yarn (v3)</li>
+          <li class="fragment">from v3 the templating in "pluggable"</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Polymer (v3)</h2>
+        <pre><code data-trim>
+  import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
+
+  class MyElement extends PolymerElement{
+    static get properties() { return {
+      name: {
+        type: String,
+        value: 'Goldrake'
+      }
+    } }
+
+    static get template() {
+      return `&ltp&gt[[name]] is coming!&lt/p&gt` 
+    }
+  }
+        
+        </code></pre>
+      </section>
+      <section>
+        <h2>HyperHTML</h2>
+        <p>Not strictly related to Web Components... 
+          but what about having pure Javascript competing with Virtual DOM?</p>
+        <ul>
+          <li class="fragment">really lighweight</li>
+          <li class="fragment">active development</li>
+          <li class="fragment">with a Custom Element companion</li>
+          <li class="fragment">"isomorphic" and NativeScript (experimental) implementations</li>
+        </ul>
+      </section>
+      <section>
+        <h2>HyperHTML</h2>
+        <pre><code data-trim>
+      	
+  function tick(render) {
+    render`
+      &ltdiv&gt
+        &lth2&gtIt is ${new Date().toLocaleTimeString()}.&lt/h2&gt
+      &lt/div&gt
+    `;
+  }
+
+  setInterval(tick, 1000,
+    hyperHTML.bind(document.body)
+  );
+
+        </code></pre>
+        <p>... and <a href="https://viperhtml.js.org/hyperhtml/examples/" 
+          target="_blank">many examples and comparisons</a> out there!</p>
+      </section>
+      <section>
+        <h1>hyperHTML <span class="vs">vs</span> litHTML</h1>
+        <p>In a quite funny twist Google developed a similar library a few
+          months ago...
+        </p>
+      </section>
+      <section>
+        <h2>SkateJS</h2>
+        <p>Started as a React inspired library but based on Web Components..</p>
+        <ul>
+          <li class="fragment">easier for React folks?</li>
+          <li class="fragment">trying a functional approach</li>
+          <li class="fragment">renderer for various libraries</li>
+        </ul>
+      </section>
+      <section>
+        <h2>SkateJS</h2>
+        <pre><code data-trim>
+  import { withComponent } from 'skatejs';
+  
+  const Component = withComponent();
+  
+  class GreetingComponent extends Component {
+    rendererCallback (renderRoot, renderCallback) {
+      renderRoot.innerHtml = '';
+      renderRoot.appendChild(renderCallback());
+    }
+    renderCallback () {
+        let el = document.createElement('span');
+        el.innerHTML = 'Hello, &ltslot&gt&lt/slot&gt!';
+        return el;
+    }
+  });
+  
+  customElements.define('x-hello', GreetingComponent);
+        </code></pre>
+      </section>
+      <section>
+        <h1>Interoperability</h1>
+        <h2><small>--- aka: reversing the polarity of the neutron flow ---</small></h2>
+      </section>
+      <section>
+        <h3>Can I use Web Components in [name a library]?</h3>
+        <h1 class="fragment">yes</h1>
+        <small class="fragment">(most of the times)</small>
+      </section>
+      <section>
+        <h2>How can I do that?</h2>
+        <p>basically just import che component in your page and add it in your
+          application template</p>
+        <p class="fragment">but not always it's so easy 😡</p>
+        <p class="fragment">Luckily there is...</p>
+      </section>
+      <section>
+        <h2>Custom Elements Everywhere</h2>
+        <a href="https://custom-elements-everywhere.com/" target="_blank">
+          <img src="./assets/cee.png" alt="" class="img">
+        </a>
+      </section>
+      <section>
+        <h1>Mythbusting</h1>
+        <h2><small>--- who you gonna call? ---</small></h2>
+      </section>
+      <section>
+        <h3>Myth #1: "the spec changed so many times..."</h3>
+        <div class="fragment">
+          <hr>
+          <h2>WRONG: just one time</h2>
+        </div>
+      </section>
+      <section>
+        <h3>Myth #2: "you can't use Redux with Web Components"</h3>
+        <div class="fragment">
+          <hr>
+          <h2>WRONG: Redux is a vanilla library</h2>
+        </div>
+      </section>
+      <section>
+        <h3>Myth #3: "there are no related developer tools"</h3>
+        <div class="fragment">
+          <hr>
+          <h2>TRUE: you just need the... developer tools!</h2>
+        </div>
+      </section>
+      <section>
+        <h3>Myth #4: "you must use Bower to work with Web Components"</h3>
+        <div class="fragment">
+          <hr>
+          <h2>FALSE: spec says nothing about package managers</h2>
+        </div>
+      </section>
+      <section>
+        <h1>Really nice use case</h1>
+        <h2><small>--- not average, not overwhelming... but nice! ---</small></h2>
+      </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <p>AKA: did you noticed my gamepad remote?</p>
+      </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <pre><code data-trim>
+
+  Reveal.initialize();
+  
+  // Listening to custom events from gamepad-api element
+  const gamepad = document.querySelector('gamepad-api');
+
+  gamepad.addEventListener('button', evt => {
+    evt.detail.button === 'prev' ? 
+      Reveal.prev() : Reveal.next();
+  });
+
+        </code></pre>
+      </section>
+      <section>
+        <h2>Wrapping "weird" APIs</h2>
+        <p>keep on playin!</p>
+        <ul>
+          <li class="fragment">
+            <a href="https://github.com/PolymerElements/platinum-bluetooth" target="_blank">
+              platinum-bluetooth</a>: guess what?</li>
+          <li class="fragment">
+            <a href="https://aframe.io/docs/0.7.0/introduction/">
+              A-frame</a>: WebVR elements by Mozilla
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Design systems/Pattern libraries</h2>
+        <p>Keep consistency across frameworks</p>
+        <ul>
+          <li>
+            <a href="https://www.webcomponents.org/collection/PolymerElements/paper-elements" target="_blank">
+              Google's Material design elements  
+            </a>
+          </li>
+          <li>
+            <a href="https://vaadin.com/elements" target="_blank">
+              Vaadin's UI elements
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="last">
+        <h1>Thanks to:</h1>
+        <ul>
+          <li>you</li>
+          <li>MilanoJS</li>
+          <li>new neighbours for wi-fi</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <gamepad-api></gamepad-api>
+
+  <script src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="./slides.js"></script>
+
 </body>
 </html>
