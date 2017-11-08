@@ -1,7 +1,7 @@
 {
   "name": "webcomponents-v1-talk",
-  "version": "1.0.0",
-  "description": "Materiale per il lightning talk @ MilanoJS - The good party 02/05/2017",
+  "version": "2.0.0",
+  "description": "Materiale per il talk @ MilanoJS del 07/11/2017",
   "main": "index.html",
   "scripts": {
     "start": "http-server ./slides -p 8085 -s",
@@ -18,11 +18,8 @@
   },
   "homepage": "https://github.com/moebiusmania/webcomponents-v1-talk#readme",
   "devDependencies": {
-    "concurrently": "^3.5.0",
     "gh-pages": "^1.0.0",
     "http-server": "^0.10.0"
   },
-  "dependencies": {
-    "reveal.js": "^3.5.0"
-  }
+  "dependencies": {}
 }
