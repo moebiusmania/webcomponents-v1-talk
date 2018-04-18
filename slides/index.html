@@ -28,10 +28,14 @@
       <section>
         <h2>About me</h2>
         <ul>
-          <li>Lead Frontend Engineer @ Bitrock</li>
-          <li>Kung fu & Tai Chi practitioner</li>
-          <li>Doctor who fan</li>
-          <li>from Milano(JS)</li>
+          <li class="fragment">Lead Frontend Engineer @ Bitrock</li>
+            <ul class="fragment">
+              <li>we are hiring ;-)</li>
+            </ul>
+          <li class="fragment">Kung fu & Tai Chi practitioner</li>
+          <li class="fragment">Hero of the storm (Abathur FTW!)</li>
+          <li class="fragment">Doctor who fan</li>
+          <li class="fragment">from Milano(JS)</li>
         </ul>
       </section>
       <section>
@@ -165,26 +169,6 @@
         </ul>
       </section>
       <section>
-        <h2>Polymer (v3)</h2>
-        <pre><code data-trim>
-  import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-
-  class MyElement extends PolymerElement{
-    static get properties() { return {
-      name: {
-        type: String,
-        value: 'Goldrake'
-      }
-    } }
-
-    static get template() {
-      return `&ltp&gt[[name]] is coming!&lt/p&gt` 
-    }
-  }
-        
-        </code></pre>
-      </section>
-      <section>
         <h2>HyperHTML</h2>
         <p>Not strictly related to Web Components... 
           but what about having pure Javascript competing with Virtual DOM?</p>
@@ -229,28 +213,6 @@
           <li class="fragment">trying a functional approach</li>
           <li class="fragment">renderer for various libraries</li>
         </ul>
-      </section>
-      <section>
-        <h2>SkateJS</h2>
-        <pre><code data-trim>
-  import { withComponent } from 'skatejs';
-  
-  const Component = withComponent();
-  
-  class GreetingComponent extends Component {
-    rendererCallback (renderRoot, renderCallback) {
-      renderRoot.innerHtml = '';
-      renderRoot.appendChild(renderCallback());
-    }
-    renderCallback () {
-        let el = document.createElement('span');
-        el.innerHTML = 'Hello, &ltslot&gt&lt/slot&gt!';
-        return el;
-    }
-  });
-  
-  customElements.define('x-hello', GreetingComponent);
-        </code></pre>
       </section>
       <section>
         <h1>Interoperability</h1>
@@ -360,12 +322,7 @@
         </ul>
       </section>
       <section class="last">
-        <h1>Thanks to:</h1>
-        <ul>
-          <li>you</li>
-          <li>MilanoJS</li>
-          <li>new neighbours for wi-fi</li>
-        </ul>
+        <h1>To be continued...</h1>
       </section>
     </div>
   </div>
